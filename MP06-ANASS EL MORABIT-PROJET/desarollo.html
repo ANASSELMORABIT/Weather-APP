@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo del Proyecto</title>
+    <link rel="stylesheet" href="desarollo.css">
+</head>
+
+<body>
+
+    <!-- Barra de navegación superior -->
+    <header>
+        <button onclick="window.history.back();" class="button-back">🔙 Volver</button>
+        <h1 class="title">Desarrollo del Proyecto</h1>
+    </header>
+
+    <!-- Contenedor principal para la explicación -->
+    <div class="container">
+        <section class="description">
+            <h2>🌟 Introducción</h2>
+            <p>En este proyecto, he trabajado en una página web interactiva que utiliza la geolocalización para obtener el clima en tiempo real en la ubicación del usuario. Además, se ha implementado un sistema para filtrar y seleccionar datos sobre comunidades autónomas, provincias y poblaciones de España. La finalidad es proporcionar al usuario una experiencia más rica, informativa y dinámica.</p>
+            
+            <div class="image-container">
+                <img src="Photos/ProjaA.png" alt="Imagen del Proyecto" class="project-image">
+                <img src="Photos/ProjaA1.png" alt="Otra Imagen" class="project-image">
+                <img src="Photos/ProjaA2.png" alt="Imagen Adicional" class="project-image">
+            </div>
+            
+
+            <h2>🛠️ Detalles del Desarrollo</h2>
+            <p>El proceso de desarrollo incluyó la integración de las siguientes tecnologías y funcionalidades:</p>
+            <ul>
+                <li><strong>API de Geolocalización:</strong> Para obtener la ubicación exacta del usuario en tiempo real, lo que permite ofrecer información personalizada basada en su localización.</li>
+                <li><strong>API del Clima:</strong> Para obtener datos climáticos en tiempo real, usando la ubicación del usuario obtenida a través de la API de geolocalización.</li>
+                <li><strong>JavaScript:</strong> Para manejar la interacción dinámica y la integración de las APIs, incluyendo la actualización de los datos de clima y ubicación en la interfaz de usuario.</li>
+                <li><strong>LocalStorage:</strong> Utilizado para almacenar la ubicación del usuario y otros datos relevantes de manera persistente en el navegador, lo que permite recuperar información sin necesidad de solicitarla nuevamente cada vez que el usuario accede a la aplicación.</li>
+            </ul>
+            
+            <h2>✨ Funciónes Principales</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🌐 getApiKey(ListApiKeyIndex)</h3>
+                    <p>Función: Selecciona una clave de API aleatoria de una lista de claves predefinidas (ListApiKey).</p>
+                    <p>
+                        Uso: Se utiliza para seleccionar una clave API para hacer solicitudes a diferentes servicios.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📍 getComunidades()</h3>
+                    <p>Función: Obtiene la lista de comunidades autónomas desde un archivo JSON y llena un campo de selección en el HTML.</p>
+                    <p>
+                        Uso: Llama a un servicio para obtener los datos de las comunidades y poblar el selector de comunidades autónomas.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📍 getProvincias()</h3>
+                    <p>Función: Llenar el campo de selección de provincias basado en la comunidad seleccionada por el usuario.</p>
+                    <p>Uso: Después de seleccionar una comunidad, esta función llena las provincias correspondientes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📍 getPoblacion()</h3>
+                    <p>Función: Similar a getProvincias(), pero para poblar el selector de poblaciones según la provincia seleccionada.</p>
+                    <p>Uso: Llama a la API para obtener las poblaciones basadas en la provincia seleccionada.</p>
+                </div>
+                <div class="feature-card">
+                    <h3> 🌤️ getWeather(event)</h3>
+                    <p>Función: Obtiene el clima actual de una población seleccionada y lo muestra en la interfaz.</p>
+                    <p>Uso: Llama a la API del clima usando la población seleccionada para obtener información sobre el clima actual.</p>
+                </div>
+                <div class="feature-card">
+                    <h3> 🌤️ getWeatherLocal(lat, lon)</h3>
+                    <p>Función: Obtiene el clima basado en las coordenadas de ubicación actual del usuario usando geolocalización.</p>
+                    <p>Uso: Se usa cuando el usuario permite compartir su ubicación, obteniendo el clima en tiempo real para su localización actual.</p>
+                </div>
+                <div class="feature-card">
+                    <h3> 🌅 getPhoto(event)</h3>
+                    <p>Función: Obtiene imágenes relacionadas con la población seleccionada desde la API de Wikimedia.</p>
+                    <p>Uso: Llama a la API de Wikimedia para obtener imágenes de la población seleccionada y las guarda en localStorage.</p>
+                </div>
+                <div class="feature-card">
+                    <h3> 📜 getDescripcion(lat, lon)</h3>
+                    <p>Función: Obtiene una descripción detallada del clima basado en las coordenadas geográficas (latitud y longitud).</p>
+                    <p>Uso: Utiliza la API de clima para obtener las descripciones de los próximos días, proporcionando un resumen de las condiciones climáticas.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📅 convertUnixToTime(timestamp)</h3>
+                    <p>Función: Convierte un timestamp en formato Unix (segundos desde 1970) a un formato de hora legible.</p>
+                    <p>Uso: Utilizada para formatear el timestamp obtenido de la API del clima para mostrarlo en una forma legible.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📅 getDataNext5Days(lat, lon)</h3>
+                    <p>Función: Obtiene las previsiones del clima para los próximos 5 días basados en las coordenadas (latitud y longitud).</p>
+                    <p>Uso: Llama a una API para obtener las predicciones meteorológicas de los próximos 5 días y devuelve una lista con esa información.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📅 SumarDias(fecha, dias)</h3>
+                    <p>Función: Suma una cantidad de días a una fecha proporcionada.</p>
+                    <p>Uso: Se utiliza para calcular las fechas de los próximos días para las previsiones.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔄 getFormattedDate()</h3>
+                    <p>Función: Obtiene la fecha actual en un formato específico (YYYY-MM-DD).</p>
+                    <p>Uso: Se usa para obtener la fecha de hoy en formato estándar.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

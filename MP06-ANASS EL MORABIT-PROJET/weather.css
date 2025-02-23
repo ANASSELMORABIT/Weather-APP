@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+:root {
+	--gradient: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	line-height: 1.25em;
+}
+
+.clear {
+	clear: both;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #040a22;
+    padding-top: 50px; 
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+
+
+.container {
+	border-radius: 25px;
+	-webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	background-color: #222831;
+	color: #ffffff;
+	height: 570px;
+    position: relative;
+
+}
+
+.weather-side {
+	position: relative;
+	height: 100%;
+	border-radius: 25px;
+	background-image: url("https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+	width: 300px;
+	-webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	-webkit-transition: -webkit-transform 300ms ease;
+	transition: -webkit-transform 300ms ease;
+	-o-transition: transform 300ms ease;
+	transition: transform 300ms ease;
+	transition: transform 300ms ease, -webkit-transform 300ms ease;
+	-webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
+	        transform: translateZ(0) scale(1.02) perspective(1000px);
+	float: left;
+}
+
+.weather-side:hover {
+	-webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+	        transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.weather-gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: var(--gradient);
+	border-radius: 25px;
+	opacity: 0.8;
+}
+
+.date-container {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+.date-dayname {
+	margin: 0;
+}
+
+.date-day {
+	display: block;
+}
+
+.location {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.location-icon {
+	display: inline-block;
+	height: 0.8em;
+	width: auto;
+	margin-right: 5px;
+}
+
+.weather-container {
+	position: absolute;
+	bottom: 25px;
+	left: 25px;
+}
+
+.weather-icon.feather {
+	height: 60px;
+	width: auto;
+}
+
+.weather-temp {
+	margin: 0;
+	font-weight: 700;
+	font-size: 4em;
+}
+
+.weather-desc {
+	margin: 0;
+}
+
+.info-side {
+	position: relative;
+	float: left;
+	height: 100%;
+	padding-top: 25px;
+}
+
+.today-info {
+	padding: 15px;
+	margin: 0 25px 25px 25px;
+/* 	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+	border-radius: 10px;
+}
+
+.today-info>div:not(:last-child) {
+	margin: 0 0 10px 0;
+}
+
+.today-info>div .title {
+	float: left;
+	font-weight: 700;
+}
+
+.today-info>div .value {
+	float: right;
+}
+
+.week-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 10px 35px;
+	-webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+
+}
+
+.week-list>li {
+	float: left;
+	padding: 15px;
+	cursor: pointer;
+	-webkit-transition: 200ms ease;
+	-o-transition: 200ms ease;
+	transition: 200ms ease;
+	border-radius: 10px;
+}
+
+.week-list>li:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+	background: #fff;
+	color: #222831;
+	-webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+}
+
+.week-list>li.active {
+	background: #fff;
+	color: #222831;
+	border-radius: 10px;
+}
+
+.week-list>li .day-name {
+	display: block;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+
+.week-list>li .day-icon {
+	display: block;
+	height: 30px;
+	width: auto;
+	margin: 0 auto;
+}
+
+.week-list>li .day-temp {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
+	font-weight: 700;
+}
+
+.location-container {
+	padding: 25px 35px;
+}
+
+.location-button {
+	outline: none;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	border: none;
+	border-radius: 25px;
+	padding: 10px;
+	font-family: 'Montserrat', sans-serif;
+	background-image: var(--gradient);
+	color: #ffffff;
+	font-weight: 700;
+	-webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	-webkit-transition: -webkit-transform 200ms ease;
+	transition: -webkit-transform 200ms ease;
+	-o-transition: transform 200ms ease;
+	transition: transform 200ms ease;
+	transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.location-button:hover {
+	-webkit-transform: scale(0.95);
+	    -ms-transform: scale(0.95);
+	        transform: scale(0.95);
+}
+
+.location-button .feather {
+	height: 1em;
+	width: auto;
+	margin-right: 5px;
+}
+
+.hot
+{ position: absolute;
+	top:55%;
+	left:10%;
+	background:linear-gradient( to top right, rgba(255,87,34,1) 0%,
+	rgba(251,140,0 ,1) 100%);
+	box-shadow: 1px 1px 30px rgba(255,111,0 ,1);
+    width:100px;
+	height:100px;
+	border-radius: 40%;
+	z-index:120;
+}
+.sun
+{
+	position: absolute;
+	top:-10%;
+	left:65%;
+	width:30px;
+	height: 30px;
+	border-radius: 100%;
+	background:linear-gradient( to bottom left, rgba(255,235,59,1) 0%,
+	rgba(249,168,37 ,1) 90%);
+	box-shadow: 1px 1px 30px rgba(255,160,0 ,1);
+	animation: inex 3s infinite linear ;
+	
+}
+
+.sunx
+{
+	position: absolute;
+	top:30%;
+	left:45%;
+	width:10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #fff;
+	opacity:0.2;
+}
+.night
+{
+	position: absolute;
+	top:80%;
+	left:10%;
+	background:linear-gradient( to bottom right,rgba(63,81,181,1) 0%,
+	rgba(171,71,188 ,1) 70%);
+	box-shadow: 1px 1px 30px rgba(81,45,168 ,1);
+    width:100px;
+	height:100px;
+	border-radius: 40%;
+	z-index:120;
+}
+.moon
+{
+	position: absolute;
+	top:-10%;
+	left:65%;
+	width:40px;
+	height: 40px;
+	border-radius: 100%;
+	background:rgba(255,241,118 ,1);
+	box-shadow: 1px 1px 30px rgba(224,224,224 ,1);
+    
+}
+.spot1
+{
+	position: absolute;
+	top:0%;
+	left:85%;
+	width:10px;
+	height: 10px;
+	border-radius: 100%;
+	background-color: #777;
+}
+.spot2
+{
+	position: absolute;
+	top:15%;
+	left:80%;
+	width:5px;
+	height: 5px;
+	border-radius: 100%;
+	background-color: #777;
+    width: 5px;
+    height: 5px;
+}
+
+.night li
+{
+	position: absolute;
+	list-style: none;
+	width: 3px;
+	height: 3px;
+	border-radius: 100%;
+	background-color:#fff;
+	
+	
+	transform: rotate(45deg);
+}
+.night li:nth-child(1)
+{
+	
+top:30%;
+left:65%;
+}
+
+.night li:nth-child(2)
+{
+top:35%;
+left:53%;
+}
+
+.night li:nth-child(3)
+{
+
+opacity: 0;
+top:20%;
+left:75%;
+width:2px;
+height: 2px;
+animation: meteor 1.5s infinite linear;
+animation-delay: 0.6s;
+
+}
+
+.night li:nth-child(4)
+{
+top:5%;
+left:50%;
+}
+
+.night li:nth-child(5)
+{
+	opacity: 0;
+top:20%;
+left:55%;
+width:1px;
+height: 15px;
+animation: meteor 1.5s infinite linear;
+}
+
+
+@keyframes inex {
+
+
+	50% {
+	opacity: 0.4;
+
+	}
+	60%
+	{
+		opacity: 1;
+	}
+}
+@keyframes move {
+
+
+	50% {
+	transform: translateX(-10px);
+
+	}
+}
+@keyframes fall {
+10%
+{
+	opacity:0.8;
+}
+
+	50% {
+		opacity:1;
+	transform: translate(-10px,30px);
+
+	}
+	100%
+	{
+		transform: translate(-25px,70px);
+
+		
+	}
+}
+@keyframes flash
+{
+	48%
+	{
+		background-color: rgba(96,125,139 ,1);
+	}
+	50%
+	{
+		background-color: #fff;
+	}
+	55%
+	{
+		background-color: rgba(96,125,139 ,1);
+	}
+	57%
+	{
+		background-color: #fff;	
+	}
+}
+@keyframes meteor
+{
+
+10%
+{opacity: 1;
+}
+80%	
+{
+left:10%;
+top:75%;
+opacity: 0;
+}
+}
+
+.sun-info, .night-info {
+    position: absolute;
+    bottom: 20%;
+    left: 160%;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.sun-info .sunrise-title, .night-info .sundown-title {
+    font-weight: 700;
+    margin: 0;
+}
+
+.sun-info .sunrise-time, .night-info .sundown-time {
+    font-weight: 400;
+    font-size: 18px;
+    display: block;
+    margin-top: 5px;
+}
+
+
+
+.weather-description-card {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.2);
+    position: relative;
+    top: 10px;
+    left: 50px;
+    overflow: hidden;
+    display: block;
+    max-width: 300px; 
+    padding: 10px;
+    word-wrap: break-word;
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+}
+
+.weather-description-card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.weather-description-card p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #dddddd;
+    font-family: 'Raleway', sans-serif;
+    white-space: normal; /* Asegura que el texto del párrafo pueda ocupar varias líneas */
+}
+#map-container {
+    width: 100%;      /* Asegura que el mapa ocupe todo el ancho de la pantalla */
+    margin-top: 20px; /* Agrega un margen para que no quede pegado a la tarjeta de clima */
+}
+
+#map {
+    height: 300px;    /* Ajusta la altura del mapa según tus necesidades */
+    width: 100%;      /* Asegura que el mapa ocupe todo el ancho */
+}
+
+
+
+
+
+.weather-Map-card {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.2);
+    position: relative;
+    top: 10px;
+    left: 50px;
+    overflow: hidden;
+    display: block;
+    width: 300px; 
+    padding: 10px;
+    word-wrap: break-word;
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+}
+
+.weather-Map-card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.weather-Map-card .map-container {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #dddddd;
+    font-family: 'Raleway', sans-serif;
+    white-space: normal; /* Asegura que el texto del párrafo pueda ocupar varias líneas */
+}
+
+
+/* Navbar Styles */
+.navbar {
+    background-color: #222831;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que el navbar esté encima del contenido */
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar ul li {
+    margin: 0 20px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar ul li a:hover {
+    color: #ff5722; /* Color al pasar el mouse sobre los enlaces */
+  }
+  
